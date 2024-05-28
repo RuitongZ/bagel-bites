@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+import Header from './components/Header';
+import Welcome from './sections/Welcome';
+import OurBagels from './sections/OurBagels';
+import AboutUs from './sections/AboutUs';
+import Slogan from './sections/Slogan';
+import Location from './sections/Location';
+import FollowUs from './sections/FollowUs';
+import BagelCarousel from './components/Carousel';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Welcome />
+      <OurBagels />
+      <AboutUs />
+      <Slogan />
+      <Location />
+      <FollowUs />
+      <BagelCarousel />
+    </>
   );
 }
 

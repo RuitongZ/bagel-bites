@@ -1,13 +1,27 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'FontOne';
+  src: url('../public/fonts/AmericanaStd.otf') format('otf');
+
+  font-weight: normal;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'FontTwo';
+  src: url('../public/fonts/Begild-MVeRx.otf') format('otf');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontThree';
+  src: url('../public/fonts/HelenasignatureRegular-BWwy5.otf') format('otf');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'FontOne', serif;
 }
