@@ -6,47 +6,38 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 const iconLeftButtonStyles = {
   position: 'absolute',
+  left: '0%',
   top: '50%',
   backgroundColor: '#000',
   borderRadius: '50%',
   ':hover': { backgroundColor: '#fff' },
   width: {
-    xs: '20px',
-    sm: '30px',
-    md: '40px',
-    lg: '40px',
+    xs: '40px',
     xl: '60px',
   },
   height: {
-    xs: '20px',
-    sm: '30px',
-    md: '40px',
-    lg: '40px',
+    xs: '40px',
     xl: '60px',
   },
+  zIndex: 1,
 };
 
 const iconRightButtonStyles = {
   position: 'absolute',
-  right: '10px',
+  right: '0%',
   top: '50%',
   backgroundColor: '#000',
   borderRadius: '50%',
   ':hover': { backgroundColor: '#fff' },
   width: {
-    xs: '20px',
-    sm: '30px',
-    md: '40px',
-    lg: '40px',
+    xs: '40px',
     xl: '60px',
   },
   height: {
-    xs: '20px',
-    sm: '30px',
-    md: '40px',
-    lg: '40px',
+    xs: '40px',
     xl: '60px',
   },
+  zIndex: 1,
 };
 
 const iconStyles = {
@@ -55,19 +46,15 @@ const iconStyles = {
   ':hover': { color: '#FF5500', backgroundColor: 'transparent' },
   borderRadius: '50%',
   fontSize: {
-    xs: 20,
-    sm: 25,
-    md: 30,
+    xs: 30,
+    sm: 35,
+    md: 35,
     lg: 35,
     xl: 40,
   },
 };
 
 const CustomLeftArrow = ({ onClick, ...rest }) => {
-  const {
-    carouselState: { currentSlide },
-  } = rest;
-
   return (
     <IconButton
       disableRipple
@@ -80,10 +67,6 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
 };
 
 const CustomRightArrow = ({ onClick, ...rest }) => {
-  const {
-    carouselState: { currentSlide },
-  } = rest;
-
   return (
     <IconButton
       disableRipple

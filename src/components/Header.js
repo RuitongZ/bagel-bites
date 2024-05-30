@@ -63,6 +63,39 @@ const HamburgerBtn = styled(IconButton)({
   },
 });
 
+const appBarStyles = {
+  pl: { xs: '10px', sm: '20px', md: '30px' },
+  pr: { xs: '10px', sm: '20px', md: '30px' },
+  mt: { xs: '10px', sm: '15px', md: '15px', lg: '20px', xl: '25px' },
+};
+
+const locationBtnStyles = {
+  width: {
+    xs: '20px',
+    sm: '30px',
+    md: '40px',
+    lg: '40px',
+    xl: '60px',
+  },
+  height: {
+    xs: '20px',
+    sm: '30px',
+    md: '40px',
+    lg: '40px',
+    xl: '60px',
+  },
+};
+
+const iconStyles = {
+  fontSize: {
+    xs: 16,
+    sm: 20,
+    md: 24,
+    lg: 26,
+    xl: 32,
+  },
+};
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -120,14 +153,7 @@ export default function Header() {
 
   return (
     <>
-      <TransparentAppBar
-        elevation={0}
-        sx={{
-          pl: { xs: '10px', sm: '20px', md: '30px' },
-          pr: { xs: '10px', sm: '20px', md: '30px' },
-          mt: { xs: '10px', sm: '15px', md: '15px', lg: '20px', xl: '25px' },
-        }}
-      >
+      <TransparentAppBar elevation={0} sx={appBarStyles}>
         <Toolbar maxwidth='xl'>
           <Grid
             container
@@ -217,35 +243,8 @@ export default function Header() {
                 </MenuButton>
               ))}
 
-              <LocationBtn
-                sx={{
-                  width: {
-                    xs: '20px',
-                    sm: '30px',
-                    md: '40px',
-                    lg: '40px',
-                    xl: '60px',
-                  },
-                  height: {
-                    xs: '20px',
-                    sm: '30px',
-                    md: '40px',
-                    lg: '40px',
-                    xl: '60px',
-                  },
-                }}
-              >
-                <FmdGoodIcon
-                  sx={{
-                    fontSize: {
-                      xs: 16,
-                      sm: 20,
-                      md: 24,
-                      lg: 26,
-                      xl: 32,
-                    },
-                  }}
-                />
+              <LocationBtn sx={locationBtnStyles}>
+                <FmdGoodIcon sx={iconStyles} />
               </LocationBtn>
             </Grid>
 

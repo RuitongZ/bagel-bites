@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import { CustomLeftArrow, CustomRightArrow } from './CustomArrow';
+import { CustomLeftArrow, CustomRightArrow } from '../ui/CustomArrow';
 
 import bagel01 from '../data/img/bagels/sesame-bagel.png';
 import bagel02 from '../data/img/bagels/cheese-bagel.png';
@@ -90,11 +90,11 @@ const ArchStyles = {
     xl: '340px',
   },
   marginX: {
-    xs: '25px',
-    sm: '30px',
-    md: '30px',
-    lg: '40px',
-    xl: '45px',
+    xs: '10px',
+    sm: '10px',
+    md: '15px',
+    lg: '20px',
+    xl: '25px',
   },
   borderTopLeftRadius: {
     xs: '130px',
