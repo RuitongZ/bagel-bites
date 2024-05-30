@@ -1,18 +1,13 @@
 import React from 'react';
 
 import AboutUsContent from '../components/AboutUsContent';
+import Creamcheese from '../data/img/creamcheese.png';
+import Butter from '../data/img/butter.png';
 
-import { Container, Typography, Box } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const WrapBox = styled(Box)({
-  minWidth: '100%',
-  minHeight: '100vh',
-  paddingLeft: 0,
-  paddingRight: 0,
-});
-
-const BlackContainer = styled(Container)({
+const BlackContainer = styled(Box)({
   minWidth: '100%',
   minHeight: '100vh',
   backgroundColor: '#000',
@@ -20,58 +15,79 @@ const BlackContainer = styled(Container)({
   justifyContent: 'center',
 });
 
+const wrapBox = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  minHeight: '50vh',
+  width: '100%',
+};
+
+const titleStytles = {
+  fontSize: {
+    xs: 30,
+    sm: 35,
+    md: 45,
+    lg: 60,
+    xl: 100,
+  },
+};
+
+const contentBox = {
+  display: 'flex',
+  justifyContent: 'center',
+  pt: {
+    xs: '40px',
+    sm: '60px',
+    md: '80px',
+    lg: '100px',
+    xl: '120px',
+  },
+};
+
 export default function AboutUs() {
   return (
-    <WrapBox>
-      <BlackContainer>
+    <BlackContainer>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minHeight: '50vh',
+            width: '30%',
+            marginTop: '400px',
+            position: 'relative',
+            left: '-50px',
+            bottom: '50px',
           }}
         >
+          <img
+            src={Creamcheese}
+            alt='creamcheese'
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </Box>
+
+        <Box sx={wrapBox}>
           <Box
             sx={{ display: 'flex', justifyContent: 'center', height: '50px' }}
           >
-            <Typography
-              variant='h2'
-              color='#fff'
-              sx={{
-                fontSize: {
-                  xs: 30,
-                  sm: 35,
-                  md: 45,
-                  lg: 60,
-                  xl: 100,
-                },
-              }}
-            >
+            <Typography variant='h2' color='#fff' sx={titleStytles}>
               About Us
             </Typography>
           </Box>
 
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              pl: { xs: 5, sm: 12, md: 16, lg: 20, xl: 40 },
-              pr: { xs: 5, sm: 12, md: 16, lg: 20, xl: 40 },
-              pt: {
-                xs: '40px',
-                sm: '60px',
-                md: '80px',
-                lg: '100px',
-                xl: '120px',
-              },
-            }}
-          >
+          <Box sx={contentBox}>
             <AboutUsContent />
           </Box>
         </Box>
-      </BlackContainer>
-    </WrapBox>
+
+        <Box sx={{ width: '30%', marginTop: '100px' }}>
+          <img
+            src={Butter}
+            alt='butter'
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </Box>
+      </Box>
+    </BlackContainer>
   );
 }

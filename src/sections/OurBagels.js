@@ -5,7 +5,6 @@ import BrandLogo from '../data/logo&icons/Logo-02.png';
 import { Container, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import BagelCarousel from '../components/Carousel';
-import zIndex from '@mui/material/styles/zIndex';
 
 const WrapBox = styled(Box)({
   minWidth: '100%',
@@ -65,7 +64,13 @@ const contentBox = {
   alignItems: 'center',
   minWidth: '100%',
   minHeight: '100vh',
-  marginY: '100px',
+  marginY: {
+    xs: '30px',
+    sm: '50px',
+    md: '70px',
+    lg: '90px',
+    xl: '110px',
+  },
 };
 
 const titleStyles = {
@@ -80,8 +85,11 @@ const titleStyles = {
 
 const sloganStyles = {
   color: '#fff',
-  textShadow:
-    '1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000',
+  textShadow: {
+    xs: '0.5px 0.5px 0px #000, -0.5px -0.5px 0px #000, 0.5px -0.5px 0px #000, -0.5px 0.5px 0px #000',
+    sm: '0.8px 0.8px 0px #000, -0.8px -0.8px 0px #000, 0.8px -0.8px 0px #000, -0.8px 0.8px 0px #000',
+    md: '1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000',
+  },
   fontSize: { xs: 30, sm: 45, md: 55, lg: 65, xl: 75 },
   zIndex: 2,
   position: 'relative',
@@ -89,10 +97,8 @@ const sloganStyles = {
 
 const carouselStyles = {
   width: '100%',
-  // paddingLeft: '200px',
-  // paddingRight: '200px',
-  marginLeft: '100px',
-  marginRight: '100px',
+  pl: { xs: '10px', sm: '20px', md: '30px' },
+  pr: { xs: '10px', sm: '20px', md: '30px' },
   position: 'relative',
   marginTop: '-70px',
 };
