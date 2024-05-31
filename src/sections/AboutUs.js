@@ -15,7 +15,25 @@ const BlackContainer = styled(Box)({
   justifyContent: 'center',
 });
 
-const wrapBox = {
+const img1BoxStyles = {
+  width: '30%',
+  position: 'relative',
+  left: '-30px',
+  top: { xs: '70%', sm: '65%', md: '55%', lg: '50%', xl: '50%' },
+};
+
+const img2BoxStyles = {
+  width: '30%',
+  position: 'relative',
+  top: '20%',
+};
+
+const imgStyles = {
+  width: '100%',
+  height: 'auto',
+};
+
+const contentWrapBox = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -25,6 +43,7 @@ const wrapBox = {
 };
 
 const titleStytles = {
+  color: '#fff',
   fontSize: {
     xs: 30,
     sm: 35,
@@ -50,27 +69,13 @@ export default function AboutUs() {
   return (
     <BlackContainer>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Box
-          sx={{
-            width: '30%',
-            marginTop: '400px',
-            position: 'relative',
-            left: '-50px',
-            bottom: '50px',
-          }}
-        >
-          <img
-            src={Creamcheese}
-            alt='creamcheese'
-            style={{ width: '100%', height: 'auto' }}
-          />
+        <Box sx={img1BoxStyles}>
+          <img src={Creamcheese} alt='creamcheese' style={imgStyles} />
         </Box>
 
-        <Box sx={wrapBox}>
-          <Box
-            sx={{ display: 'flex', justifyContent: 'center', height: '50px' }}
-          >
-            <Typography variant='h2' color='#fff' sx={titleStytles}>
+        <Box sx={contentWrapBox}>
+          <Box>
+            <Typography variant='h2' sx={titleStytles}>
               About Us
             </Typography>
           </Box>
@@ -80,12 +85,8 @@ export default function AboutUs() {
           </Box>
         </Box>
 
-        <Box sx={{ width: '30%', marginTop: '100px' }}>
-          <img
-            src={Butter}
-            alt='butter'
-            style={{ width: '100%', height: 'auto' }}
-          />
+        <Box sx={img2BoxStyles}>
+          <img src={Butter} alt='butter' style={imgStyles} />
         </Box>
       </Box>
     </BlackContainer>
