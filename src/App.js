@@ -7,19 +7,23 @@ import AboutUs from './sections/AboutUs';
 import Slogan from './sections/Slogan';
 import Location from './sections/Location';
 import FollowUs from './sections/FollowUs';
-import BagelCarousel from './components/Carousel';
+import Footer from './components/Footer';
+import ScrollToTop from './ui/ScrollToTop';
 
 function App() {
   return (
     <>
-      <Header />
-      <Welcome />
-      <OurBagels />
-      <AboutUs />
-      <Slogan />
-      <Location />
-      <FollowUs />
-      <BagelCarousel />
+      <div>
+        <Header />
+        <Welcome />
+        <OurBagels />
+        <AboutUs />
+        <Slogan />
+        <Location />
+        <FollowUs />
+        <Footer />
+      </div>
+      <ScrollToTop />
     </>
   );
 }
