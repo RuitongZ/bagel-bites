@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BagelImg from '../data/img/bagel.jpg';
+import BagelImg from '../data/img/bgImg/bagel.jpg';
 
 import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';

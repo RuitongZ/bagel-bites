@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StoreImg from '../data/img/store.jpg';
+import StoreImg from '../data/img/bgImg/store.jpg';
 
 import { Box, Container, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';

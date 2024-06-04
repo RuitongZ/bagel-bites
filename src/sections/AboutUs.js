@@ -1,8 +1,9 @@
 import React from 'react';
 
 import AboutUsContent from '../components/AboutUsContent';
-import Creamcheese from '../data/img/creamcheese.png';
-import Butter from '../data/img/butter.png';
+
+import Creamcheese from '../data/img/bgImg/creamcheese.png';
+import Butter from '../data/img/bgImg/butter.png';
 
 import { Typography, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
