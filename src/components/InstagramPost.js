@@ -1,10 +1,6 @@
 import React from 'react';
 
-import Post01 from '../data/img/post-01.png';
-import Post02 from '../data/img/post-02.png';
-import Post03 from '../data/img/post-03.png';
-import Post04 from '../data/img/post-04.png';
-import Post05 from '../data/img/post-05.png';
+import instsgramImg from '../data/instagramImg';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -89,11 +85,9 @@ export default function InstagramPost() {
       slidesToSlide={1}
       swipeable
     >
-      <img src={Post01} alt='Instagram post' style={imgStyles} />
-      <img src={Post02} alt='Instagram post' style={imgStyles} />
-      <img src={Post03} alt='Instagram post' style={imgStyles} />
-      <img src={Post04} alt='Instagram post' style={imgStyles} />
-      <img src={Post05} alt='Instagram post' style={imgStyles} />
+      {instsgramImg.map((image, index) => (
+        <img key={index} src={image.src} alt={image.alt} style={imgStyles} />
+      ))}
     </Carousel>
   );
 }
