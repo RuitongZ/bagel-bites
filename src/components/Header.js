@@ -139,7 +139,7 @@ function ElevationScroll(props) {
   return React.cloneElement(children, {
     style: {
       backgroundColor: trigger ? '#fff' : 'transparent',
-      transition: trigger ? '0.3s' : '0.5s',
+      transition: trigger ? '3000' : '5000',
     },
   });
 }
