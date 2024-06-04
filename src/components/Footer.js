@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Button, Box, Typography, TextField, colors } from '@mui/material';
+import EmailScribeForm from '../ui/EmailSubscribeForm';
+
+import { Button, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const OrangeContainer = styled(Box)({
@@ -53,19 +55,6 @@ const subTypo = {
   justifyContent: 'center',
 };
 
-const subscribeBtn = {
-  paddingX: '40px',
-  backgroundColor: '#000',
-  textTransform: 'none',
-  fontSize: { md: 16, lg: 18, xl: 20 },
-  height: '50px',
-  borderRadius: '0 5px 5px 0',
-  ':hover': {
-    backgroundColor: '#000',
-    color: '#FF5500',
-  },
-};
-
 const copyrightStyles = {
   fontSize: {
     xs: 8,
@@ -104,36 +93,7 @@ export default function Footer() {
             Subscribe to our newsletter today!
           </Typography>
 
-          <Box sx={{ display: 'flex', width: '100%' }}>
-            <TextField
-              variant='filled'
-              id='demo-helper-text-misaligned-no-helper'
-              label='*Please enter your E-mail...'
-              type='emial'
-              sx={{
-                width: '100%',
-                height: '50px',
-                backgroundColor: '#fff',
-                borderRadius: '5px 0 0 5px',
-              }}
-              InputProps={{
-                style: {
-                  height: '50px',
-                },
-              }}
-              InputLabelProps={{
-                style: { color: '#000' },
-              }}
-            />
-            <Button
-              disableRipple
-              variant='contained'
-              disableElevation
-              sx={subscribeBtn}
-            >
-              Subscribe
-            </Button>
-          </Box>
+          <EmailScribeForm />
         </Box>
       </Box>
 

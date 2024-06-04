@@ -15,12 +15,22 @@ function App() {
     <>
       <div>
         <Header />
-        <Welcome />
-        <OurBagels />
-        <AboutUs />
+        <div id='welcome'>
+          <Welcome />
+        </div>
+        <div id='our-bagels'>
+          <OurBagels />
+        </div>
+        <div id='about'>
+          <AboutUs />
+        </div>
         <Slogan />
-        <Location />
-        <FollowUs />
+        <div id='location'>
+          <Location />
+        </div>
+        <div id='follow-us'>
+          <FollowUs />
+        </div>
         <Footer />
       </div>
       <ScrollToTop />

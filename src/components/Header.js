@@ -19,6 +19,8 @@ import {
 import { styled } from '@mui/system';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-scroll';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 const TransparentAppBar = styled(AppBar)({
   backgroundColor: 'transparent',
@@ -51,7 +53,7 @@ const LocationBtn = styled(IconButton)({
   borderRadius: '50%',
   ':hover': {
     color: '#FF5500',
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
   },
 });
 
@@ -63,10 +65,16 @@ const HamburgerBtn = styled(IconButton)({
   },
 });
 
+const hamburgerBtnGridStyles = {
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  display: { xs: 'flex', sm: 'flex', md: 'none' },
+};
+
 const appBarStyles = {
   pl: { xs: '10px', sm: '20px', md: '30px' },
   pr: { xs: '10px', sm: '20px', md: '30px' },
-  mt: { xs: '10px', sm: '15px', md: '15px', lg: '20px', xl: '25px' },
+  paddingTop: '5px',
 };
 
 const locationBtnStyles = {
@@ -86,6 +94,17 @@ const locationBtnStyles = {
   },
 };
 
+const logoGridStyles = {
+  display: 'flex',
+  alignItems: 'center',
+  paddingLeft: '20px',
+  justifyContent: {
+    xs: 'center',
+    sm: 'center',
+    md: 'flex-start',
+  },
+};
+
 const iconStyles = {
   fontSize: {
     xs: 16,
@@ -96,10 +115,43 @@ const iconStyles = {
   },
 };
 
-export default function Header() {
+const menuGridStyles = {
+  display: { xs: 'none', sm: 'none', md: 'flex' },
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+};
+
+const locationBtnGridStyles = {
+  display: { xs: 'flex', sm: 'flex', md: 'none' },
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+};
+
+function ElevationScroll(props) {
+  const { children, window } = props;
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
+
+  return React.cloneElement(children, {
+    style: {
+      backgroundColor: trigger ? '#fff' : 'transparent',
+      transition: trigger ? '0.3s' : '0.5s',
+    },
+  });
+}
+
+export default function Header(props) {
   const [open, setOpen] = useState(false);
 
-  const sections = ['Our Bagels', 'About', 'Follow Us'];
+  const sections = [
+    { id: 'our-bagels', label: 'Our Bagels' },
+    { id: 'about', label: 'About' },
+    { id: 'follow-us', label: 'Follow Us' },
+  ];
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -114,22 +166,32 @@ export default function Header() {
     >
       <List sx={{ marginTop: '15px' }}>
         {sections.map((section) => (
-          <ListItem key={section}>
+          <ListItem key={section.id}>
             <ListItemButton
+              disableRipple
               sx={{ padding: 0, ':hover': { backgroundColor: 'transparent' } }}
             >
-              <Typography
-                variant='H6'
-                color='#000'
-                sx={{
-                  fontSize: { xs: 16, sm: 20 },
-                  paddingLeft: '15px',
-
-                  ':hover': { color: '#fff' },
-                }}
+              <Link
+                activeClass='active'
+                to={section.id}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
               >
-                {section}
-              </Typography>
+                <Typography
+                  variant='h6'
+                  color='#000'
+                  sx={{
+                    fontSize: { xs: 16, sm: 20 },
+                    paddingLeft: '15px',
+
+                    ':hover': { color: '#fff' },
+                  }}
+                >
+                  {section.label}
+                </Typography>
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -137,7 +199,7 @@ export default function Header() {
           sx={{ minHeight: '75vh', display: 'flex', alignItems: 'flex-end' }}
         >
           <Typography
-            variant='H6'
+            variant='h6'
             color='#fff'
             sx={{
               fontSize: { xs: 10, sm: 12 },
@@ -153,118 +215,115 @@ export default function Header() {
 
   return (
     <>
-      <TransparentAppBar elevation={0} sx={appBarStyles}>
-        <Toolbar maxwidth='xl'>
-          <Grid
-            container
-            columnSpacing={{ xs: 3, sm: 3, md: 2 }}
-            sx={{
-              display: 'flex',
-            }}
-          >
-            <Grid
-              item
-              xs={4}
-              sm={4}
-              sx={{
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                display: { xs: 'flex', sm: 'flex', md: 'none' },
-              }}
-            >
-              <HamburgerBtn
-                disableRipple
-                size='large'
-                aria-label='hamberger menu'
-                aria-controls='menu-appbar'
-                aria-haspopup='true'
-                onClick={toggleDrawer(true)}
-              >
-                <MenuIcon fontSize='large' />
-              </HamburgerBtn>
-              <Drawer
-                anchor='left'
-                open={open}
-                onClose={toggleDrawer(false)}
-                PaperProps={{ sx: { backgroundColor: '#FF5500' } }}
-              >
-                {DrawerList}
-              </Drawer>
-            </Grid>
-
-            <Grid
-              item
-              xs={4}
-              sm={4}
-              md={4}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                paddingLeft: '20px',
-                justifyContent: {
-                  xs: 'center',
-                  sm: 'center',
-                  md: 'flex-start',
-                },
-              }}
-            >
-              <Box
-                component='img'
-                src={Logo}
-                alt='Logo'
-                sx={{
-                  height: {
-                    xs: '50px',
-                    sm: '55px',
-                    md: '60px',
-                    lg: '65px',
-                    xl: '70px',
-                  },
-                }}
-              ></Box>
-            </Grid>
-
-            <Grid
-              item
-              md={8}
-              sx={{
-                display: { xs: 'none', sm: 'none', md: 'flex' },
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-              }}
-            >
-              {sections.map((section) => (
-                <MenuButton
+      <ElevationScroll {...props}>
+        <TransparentAppBar elevation={0} sx={appBarStyles}>
+          <Toolbar maxwidth='xl'>
+            <Grid container columnSpacing={{ xs: 3, sm: 3, md: 2 }}>
+              <Grid item xs={4} sm={4} sx={hamburgerBtnGridStyles}>
+                <HamburgerBtn
                   disableRipple
-                  key={section}
-                  sx={{ fontSize: { md: 20, lg: 20, xl: 25 } }}
+                  size='large'
+                  aria-label='hamberger menu'
+                  aria-controls='menu-appbar'
+                  aria-haspopup='true'
+                  onClick={toggleDrawer(true)}
                 >
-                  {section}
-                </MenuButton>
-              ))}
+                  <MenuIcon fontSize='large' />
+                </HamburgerBtn>
+                <Drawer
+                  anchor='left'
+                  open={open}
+                  onClose={toggleDrawer(false)}
+                  PaperProps={{
+                    sx: {
+                      backgroundColor: '#FF5500',
+                      display: { xs: 'flex', sm: 'flex', md: 'none' },
+                    },
+                  }}
+                >
+                  {DrawerList}
+                </Drawer>
+              </Grid>
 
-              <LocationBtn sx={locationBtnStyles}>
-                <FmdGoodIcon sx={iconStyles} />
-              </LocationBtn>
-            </Grid>
+              <Grid item xs={4} sm={4} md={4} sx={logoGridStyles}>
+                <Link
+                  activeClass='active'
+                  to='welcome'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <Box
+                    component='img'
+                    src={Logo}
+                    alt='Logo'
+                    sx={{
+                      height: {
+                        xs: '50px',
+                        sm: '55px',
+                        md: '60px',
+                        lg: '65px',
+                        xl: '70px',
+                      },
+                    }}
+                  ></Box>
+                </Link>
+              </Grid>
 
-            <Grid
-              item
-              xs={4}
-              sm={4}
-              sx={{
-                display: { xs: 'flex', sm: 'flex', md: 'none' },
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-              }}
-            >
-              <LocationBtn>
-                <FmdGoodIcon fontSize='small' />
-              </LocationBtn>
+              <Grid item md={8} sx={menuGridStyles}>
+                {sections.map((section) => (
+                  <MenuButton
+                    disableRipple
+                    sx={{ fontSize: { md: 20, lg: 20, xl: 25 } }}
+                    key={section.id}
+                  >
+                    <Link
+                      activeClass='active'
+                      to={section.id}
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                    >
+                      {section.label}
+                    </Link>
+                  </MenuButton>
+                ))}
+
+                <Link
+                  activeClass='active'
+                  to='location'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <LocationBtn sx={locationBtnStyles}>
+                    <FmdGoodIcon sx={iconStyles} />
+                  </LocationBtn>
+                </Link>
+              </Grid>
+
+              <Grid item xs={4} sm={4} sx={locationBtnGridStyles}>
+                <Link
+                  activeClass='active'
+                  to='location'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <LocationBtn>
+                    <FmdGoodIcon fontSize='small' />
+                  </LocationBtn>
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
-        </Toolbar>
-      </TransparentAppBar>
+          </Toolbar>
+        </TransparentAppBar>
+      </ElevationScroll>
     </>
   );
 }
