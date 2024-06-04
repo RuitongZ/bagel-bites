@@ -182,68 +182,6 @@ export default function BagelCarousel() {
           </Typography>
         </ImgContainer>
       ))}
-
-      {/* <ImgContainer>
-        <ArchBackground sx={ArchStyles}>
-          <img src={bagel01} alt='sesame bagel' style={imgStyles} />
-        </ArchBackground>
-        <Typography variant='h6' sx={productNameStyles}>
-          Sesame Bagel
-        </Typography>
-      </ImgContainer>
-
-      <ImgContainer>
-        <ArchBackground sx={ArchStyles}>
-          <img src={bagel02} alt='cheese bagel' style={imgStyles} />
-        </ArchBackground>
-        <Typography variant='h6' sx={productNameStyles}>
-          Cheese Bagel
-        </Typography>
-      </ImgContainer>
-
-      <ImgContainer>
-        <ArchBackground sx={ArchStyles}>
-          <img src={bagel03} alt='plain bagel' style={imgStyles} />
-        </ArchBackground>
-        <Typography variant='h6' sx={productNameStyles}>
-          Plain Bagel
-        </Typography>
-      </ImgContainer>
-
-      <ImgContainer>
-        <ArchBackground sx={ArchStyles}>
-          <img src={bagel06} alt='everything bagel' style={imgStyles} />
-        </ArchBackground>
-        <Typography variant='h6' sx={productNameStyles}>
-          Everything Bagel
-        </Typography>
-      </ImgContainer>
-
-      <ImgContainer>
-        <ArchBackground sx={ArchStyles}>
-          <img
-            src={bagel04}
-            alt='montreal style bagel sandwich'
-            style={imgStyles}
-          />
-        </ArchBackground>
-        <Typography variant='h6' sx={productNameStyles}>
-          Montreal Style Bagel
-        </Typography>
-      </ImgContainer>
-
-      <ImgContainer>
-        <ArchBackground sx={ArchStyles}>
-          <img
-            src={bagel05}
-            alt='ham&cheese bagel sandwich'
-            style={imgStyles}
-          />
-        </ArchBackground>
-        <Typography variant='h6' sx={productNameStyles}>
-          Bagel with Ham & Cheese
-        </Typography>
-      </ImgContainer> */}
     </Carousel>
   );
 }
