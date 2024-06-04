@@ -7,12 +7,13 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { CustomLeftArrow, CustomRightArrow } from '../ui/CustomArrow';
 
-import bagel01 from '../data/img/bagels/sesame-bagel.png';
-import bagel02 from '../data/img/bagels/cheese-bagel.png';
-import bagel03 from '../data/img/bagels/plainbagel.png';
-import bagel04 from '../data/img/bagels/montreal-style-bagel-sandwich.png';
-import bagel05 from '../data/img/bagels/ham&cheese-bagel-sandwich.png';
-import bagel06 from '../data/img/bagels/everything.png';
+import bagelImg from '../data/bagelImg';
+// import bagel01 from '../data/img/bagels/sesame-bagel.png';
+// import bagel02 from '../data/img/bagels/cheese-bagel.png';
+// import bagel03 from '../data/img/bagels/plainbagel.png';
+// import bagel04 from '../data/img/bagels/montreal-style-bagel-sandwich.png';
+// import bagel05 from '../data/img/bagels/ham&cheese-bagel-sandwich.png';
+// import bagel06 from '../data/img/bagels/everything.png';
 
 const responsiveStyles = {
   xl: {
@@ -166,7 +167,23 @@ export default function BagelCarousel() {
       slidesToSlide={1}
       swipeable
     >
-      <ImgContainer>
+      {bagelImg.map((image, index) => (
+        <ImgContainer key={index}>
+          <ArchBackground sx={ArchStyles}>
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              style={imgStyles}
+            />
+          </ArchBackground>
+          <Typography variant='h6' sx={productNameStyles}>
+            {image.name}
+          </Typography>
+        </ImgContainer>
+      ))}
+
+      {/* <ImgContainer>
         <ArchBackground sx={ArchStyles}>
           <img src={bagel01} alt='sesame bagel' style={imgStyles} />
         </ArchBackground>
@@ -226,7 +243,7 @@ export default function BagelCarousel() {
         <Typography variant='h6' sx={productNameStyles}>
           Bagel with Ham & Cheese
         </Typography>
-      </ImgContainer>
+      </ImgContainer> */}
     </Carousel>
   );
 }
