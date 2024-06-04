@@ -90,7 +90,7 @@ export default function FollowUs() {
             <TwitterIcon sx={iconStyles} />
           </IconButton>
         </Box>
-        <Box sx={{ width: '100%', height: 'auto', mt: '50px' }}>
+        <Box sx={{ width: '100%', height: 'auto', mt: '50px', mb: '100px' }}>
           <InstagramPost />
         </Box>
       </Box>

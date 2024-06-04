@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BrandLogo from '../data/logo&icons/Logo-02.png';
-
 import { Container, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import BagelCarousel from '../components/Carousel';
@@ -20,42 +18,6 @@ const OrangeContainer = styled(Container)({
   display: 'flex',
   justifyContent: 'center',
 });
-
-const wrapBoxStyles = {
-  paddingLeft: 0,
-  paddingRight: 0,
-  mt: {
-    xs: '0px',
-    sm: '-120px',
-    md: '-145px',
-    lg: '-160px',
-    xl: '-240px',
-  },
-};
-
-const brandLogoStyles = {
-  pl: { xs: '40px', sm: '70px', md: '100px', lg: '140px', xl: '160px' },
-  pr: { xs: '40px', sm: '70px', md: '100px', lg: '140px', xl: '160px' },
-  display: {
-    xs: 'none',
-    sm: 'block',
-    md: 'block',
-    lg: 'block',
-    xl: 'block',
-  },
-  width: '100%',
-  height: 'auto',
-};
-
-const orangeContainerOffset = {
-  mt: {
-    xs: 0,
-    sm: '-18px',
-    md: '-28px',
-    lg: '-40px',
-    xl: '-50px',
-  },
-};
 
 const contentBox = {
   display: 'flex',
@@ -105,14 +67,8 @@ const carouselStyles = {
 
 export default function OurBagels() {
   return (
-    <WrapBox sx={wrapBoxStyles}>
-      <Box
-        component='img'
-        src={BrandLogo}
-        alt='Brand logo'
-        sx={brandLogoStyles}
-      />
-      <OrangeContainer sx={orangeContainerOffset}>
+    <WrapBox>
+      <OrangeContainer sx={{ mt: 0 }}>
         <Box sx={contentBox}>
           <Box sx={{ display: 'flex', justifyContent: 'center', mb: '50px' }}>
             <Typography variant='h2' sx={titleStyles}>

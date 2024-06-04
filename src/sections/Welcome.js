@@ -1,7 +1,8 @@
 import React from 'react';
 
-import WelcomeImg from '../data/img/welcome.jpg';
-import BrandLogo from '../data/logo&icons/Logo-02.png';
+import WelcomeImg from '../data/img/bgImg/welcome.jpg';
+import BrandLogo from '../data/logo&icons/Logo-03.png';
+import BrandLogoCut from '../data/logo&icons/Logo-02.png';
 
 import { Box, Typography, Grid } from '@mui/material';
 
@@ -36,11 +37,12 @@ export default function Welcome() {
           sx={{
             display: 'flex',
             justifyContent: 'center',
+            alignItems: 'flex-end',
             minWidth: '100%',
-            minHeight: '40vh',
+            minHeight: { xs: '50vh', sm: '100vh' },
           }}
         >
-          <Grid
+          <Grid //welcome
             item
             xs={12}
             sx={{
@@ -63,17 +65,21 @@ export default function Welcome() {
                   sm: '70px',
                   md: '75px',
                   lg: '70px',
-                  xl: '90px',
+                  xl: '100px',
                 },
                 color: '#fff',
-                fontSize: { xs: 60, sm: 80, md: 100, lg: 110, xl: 140 },
+                fontSize: { xs: 60, sm: 80, md: 100, lg: 110, xl: 150 },
               }}
             >
               Welcome
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Grid //line
+            item
+            xs={12}
+            sx={{ display: 'flex', justifyContent: 'center' }}
+          >
             <Box
               component='span'
               sx={{
@@ -82,7 +88,7 @@ export default function Welcome() {
                   sm: '110px',
                   md: '120px',
                   lg: '100px',
-                  xl: '200px',
+                  xl: '180px',
                 },
                 borderLeft: 1,
                 borderColor: '#fff',
@@ -90,16 +96,13 @@ export default function Welcome() {
             />
           </Grid>
 
-          <Grid
+          <Grid //Bagel Bites
             item
             xs={12}
             sx={{
               display: {
                 xs: 'flex',
                 sm: 'none',
-                md: 'none',
-                lg: 'none',
-                xl: 'none',
               },
               justifyContent: 'center',
             }}
@@ -108,6 +111,30 @@ export default function Welcome() {
               component='img'
               src={BrandLogo}
               alt='Brand logo'
+              sx={{
+                pl: { xs: '40px' },
+                pr: { xs: '40px' },
+                width: '100%',
+                height: 'auto',
+              }}
+            />
+          </Grid>
+
+          <Grid //Bagel Bites
+            item
+            xs={12}
+            sx={{
+              display: {
+                xs: 'none',
+                sm: 'flex',
+              },
+              justifyContent: 'center',
+            }}
+          >
+            <Box
+              component='img'
+              src={BrandLogoCut}
+              alt='Bagel Bites'
               sx={{
                 pl: { xs: '60px' },
                 pr: { xs: '60px' },
