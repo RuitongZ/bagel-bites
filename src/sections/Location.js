@@ -88,7 +88,7 @@ export default function Location() {
           330 Richmond street, Toronto, ON, M4B 0B2
         </Typography>
         <Typography variant='h2' sx={titleStyles}>
-          Open Hour
+          Open Hours
         </Typography>
         <Typography variant='h5' sx={{ pb: '10px', ...textStyles }}>
           Mon - Fri: 9:00a.m. - 7:00p.m.
