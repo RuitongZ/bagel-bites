@@ -261,7 +261,7 @@ export default function Header(props) {
                     alt='Logo'
                     sx={{
                       height: {
-                        xs: '50px',
+                        xs: '55px',
                         sm: '55px',
                         md: '60px',
                         lg: '65px',
