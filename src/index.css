@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'FontOne';
-  src: url('../public/fonts/AmericanaStd.otf') format('otf');
+  src: url('../public/fonts/AmericanaStd.otf') format('opentype');
 
   font-weight: normal;
   font-style: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'FontTwo';
-  src: url('../public/fonts/Begild-MVeRx.otf') format('otf');
+  src: url('../public/fonts/Begild-MVeRx.otf') format('opentype');
 
   font-weight: normal;
   font-style: normal;
@@ -16,7 +16,8 @@
 
 @font-face {
   font-family: 'FontThree';
-  src: url('../public/fonts/HelenasignatureRegular-BWwy5.otf') format('otf');
+  src: url('../public/fonts/HelenasignatureRegular-BWwy5.otf')
+    format('opentype');
 
   font-weight: normal;
   font-style: normal;
