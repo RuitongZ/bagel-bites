@@ -76,7 +76,9 @@ export default function OurBagels() {
             </Typography>
           </Box>
 
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Box
+            sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}
+          >
             <Typography variant='h3' sx={sloganStyles}>
               Classic & Delicious
             </Typography>
